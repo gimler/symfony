@@ -8,5 +8,6 @@ docker run \
     -v /tmp/symfony/icu:/tmp \
     -v $(pwd):/symfony \
     -w /symfony \
+    -e CXXFLAGS="-std=c++20 -fext-numeric-literals" \
     jakzal/php-intl:8.3-74.1 \
     php src/Symfony/Component/Intl/Resources/bin/update-data.php
